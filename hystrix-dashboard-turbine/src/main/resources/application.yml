@@ -1,0 +1,24 @@
+server:
+  port: 8800
+spring:
+  application:
+    name: consul-customer-turbine
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        register-health-check: false
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+turbine:
+  app-config: consul-c1,consul-c2
+  cluster-name-expression: new String("default")
+  aggregator:
+    cluster-config: default

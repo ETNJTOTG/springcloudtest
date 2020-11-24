@@ -1,0 +1,19 @@
+server:
+  port: 8900
+spring:
+  application:
+    name: config-server-git
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: config-server-git
+        register-health-check: false
+    config:
+      server:
+        git:
+          uri: https://github.com/ETNJTOTG/springcloud.git
+          search-paths: config
+
+
