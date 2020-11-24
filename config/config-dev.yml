@@ -1,0 +1,5 @@
+config: hello dev update1
+cwq:
+  blog:
+    name: cwq's blog
+    title: Spring Boot

@@ -1,0 +1,23 @@
+server:
+  port: 8802
+spring:
+  application:
+    name: consul-customer2
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: consul-c2
+        register-health-check: false
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
